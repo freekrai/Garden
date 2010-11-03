@@ -372,8 +372,13 @@ class Gdn_Configuration {
       if ($File == '')
          trigger_error(ErrorMessage('You must specify a file path to be saved.', 'Configuration', 'Save'), E_USER_ERROR);
 
-      if (!is_writable($File))
-         throw new Exception(sprintf(T("Unable to write to config file '%s' when saving."),$File));
+      if (!is_writable($File)) {
+         if (Gdn::Config('Garden.ReadOnlyConfig')) {
+            throw new Exception(sprintf(T("Unable to write to config file '%s' when saving."),$File));
+         } else {
+            return TRUE;
+         }
+      }
 
       if($Group == '')
          $Group = $this->CurrentGroup;
