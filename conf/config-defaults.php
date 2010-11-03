@@ -37,6 +37,7 @@ $Configuration['Garden']['WebRoot']                             = FALSE; // You 
 $Configuration['Garden']['StripWebRoot']                        = FALSE;
 $Configuration['Garden']['Debug']                               = FALSE;
 $Configuration['Garden']['RewriteUrls']                         = FALSE;
+$Configuration['Garden']['ReadOnlyConfig']                        = FALSE;
 $Configuration['Garden']['Session']['Length']                   = '15 minutes';
 $Configuration['Garden']['Cookie']['Salt']                      = '';
 $Configuration['Garden']['Cookie']['Name']                      = 'Vanilla';
